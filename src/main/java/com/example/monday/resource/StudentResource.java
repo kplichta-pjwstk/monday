@@ -1,6 +1,7 @@
 package com.example.monday.resource;
 
 import com.example.monday.data.Student;
+import com.example.monday.excetionhandler.InvalidStudentNameException;
 import com.example.monday.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -49,7 +50,7 @@ public class StudentResource {
     }
 
     @GetMapping
-    public List<StudentDto> getStudentsByName(@RequestParam String name) {
+    public List<StudentDto> getStudentsByName(String name) {
         return studentService.getStudentsByName(name);
     }
 
